@@ -1,0 +1,112 @@
+.dropdown {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.dropdownIcons {
+    display: inline-flex;
+    gap: 16px;
+    background: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px 0 0 50px;
+    padding: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 300ms ease-in;
+
+}
+
+.dropdownIcons:hover {
+    background-color: var(--black-alpha-08);
+}
+.hovered{
+    background-color: var(--black-alpha-08);
+}
+
+.account {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    text-align: center;
+    border-radius: 50%;
+    text-transform: uppercase;
+    line-height: 40px;
+    transition: 300ms;
+}
+
+.dropdownBody {
+    position: absolute;
+    top: 130%;
+    right: 10px;
+    background-color: var(--white);
+    width: 250px;
+    padding: 10px;
+    align-content: flex-start;
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--black-alpha-4);
+    font-size: 15px;
+    z-index: 13;
+}
+
+.dropdownBody::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border: 6px solid;
+    border-color: transparent transparent var(--white) transparent;
+    position: absolute;
+    right: 50px;
+    bottom: 100%;
+}
+
+.dropdownBody > ul {
+    width: 100%;
+    list-style: none;
+    padding: 5px;
+    margin: 0;
+}
+
+.dropdownBody > ul > li {
+    text-align: center;
+    cursor: pointer;
+    line-height: 30px;
+}
+
+.liIcons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3px;
+    color: var(--grey);
+}
+
+.liIcons > span {
+    font-size: 18px;
+    color: var(--dark-grey);
+    transition: ease-in 300ms;
+}
+
+.liIcons:hover > span {
+    color: var(--red);
+    margin-left: 2px;
+    transition: ease-out 300ms;
+}
+
+.liIcons:hover {
+    background-color: var(--bg-lighter-grey)
+}
+
+.liIcons:active ::after {
+    color: red;
+}
+
+.dropdownBody > ul >li:last-child{
+    border-top: 1px solid var(--border-light-grey);
+}
+.dropdownBody >ul >li:first-child{
+    border-bottom: 1px solid var(--border-light-grey);
+}

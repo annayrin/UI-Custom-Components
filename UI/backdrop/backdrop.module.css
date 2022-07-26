@@ -1,0 +1,19 @@
+.backdrop {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    display: none;
+    position: fixed;
+    top:0;
+    left: 0;
+
+}
+
+.openBackdrop {
+    display: revert;
+}
+
+.blur {
+    backdrop-filter: blur(2px);
+}
+

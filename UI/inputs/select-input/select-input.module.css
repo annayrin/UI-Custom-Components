@@ -1,0 +1,33 @@
+.selectInput {
+    width: 100%;
+}
+
+.label {
+    text-transform: capitalize;
+    display: block;
+    margin-bottom: 5px;
+    color: var(--dark-grey);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.select {
+     border-radius: 6px;
+     outline: none !important;
+     width: 100%;
+     padding: 10px;
+     border: 1px solid var(--border-light-grey);
+     transition: 300ms;
+     color: var(--grey);
+     letter-spacing: 1px;
+     font-weight: 600;
+     font-size: 12px;
+ }
+
+.select:hover {
+    box-shadow: 1px 1px 3px var(--black-alpha-08);
+}
+
+.label > sup {
+    color: var(--red);
+}

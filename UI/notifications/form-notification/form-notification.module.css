@@ -1,0 +1,45 @@
+.formNotification {
+    width: 100%;
+    animation: show 1500ms ease-in-out;
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.error {
+    color: var(--red);
+}
+
+.warning {
+    color: var(--warning);
+}
+
+.success {
+    color: var(--success);
+}
+
+.info {
+    color: var(--light-blue);
+}
+
+.default {
+    color: var(--darked-grey);
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text {
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 10px;
+    text-transform: capitalize;
+    color: var(--dark-grey);
+}
