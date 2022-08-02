@@ -18,10 +18,10 @@
 }
 
 @keyframes show {
-     from {
-         transform: translateX(-50%) translateY(-40%);
-     }
- }
+    from {
+        transform: translateX(-50%) translateY(-40%);
+    }
+}
 
 .modal * {
     animation: none !important;
@@ -37,7 +37,6 @@
     height: calc(100% - 60px);
 
 }
-
 
 
 @media (max-width: 768px) {

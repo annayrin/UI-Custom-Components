@@ -20,10 +20,17 @@
 
 }
 
+.customHandler {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .dropdownIcons:hover {
     background-color: var(--black-alpha-08);
 }
-.hovered{
+
+.hovered {
     background-color: var(--black-alpha-08);
 }
 
@@ -104,9 +111,10 @@
     color: red;
 }
 
-.dropdownBody > ul >li:last-child{
+.dropdownBody > ul > li:last-child {
     border-top: 1px solid var(--border-light-grey);
 }
-.dropdownBody >ul >li:first-child{
+
+.dropdownBody > ul > li:first-child {
     border-bottom: 1px solid var(--border-light-grey);
 }

@@ -1,10 +1,11 @@
 .calendarContainer {
     position: relative;
-    /*z-index: 10;*/
-    color: var(--dark-grey);;
+    color: var(--dark-grey);
+    width: 100%;
 }
 
 .dateInput {
+    z-index: 13;
     height: 30px;
     width: 100%;
     border: 1px solid var(--border-light-grey);
@@ -14,6 +15,12 @@
     padding: 2px;
     align-items: center;
     font-size: 15px;
+    cursor: pointer;
+}
+
+.emptyDate {
+    width: 100%;
+    z-index: 13;
 }
 
 .dateInput > div:nth-child(2) {
@@ -21,9 +28,15 @@
 }
 
 .dateItem {
+    z-index: 13;
     overflow: hidden;
     width: 50%;
     white-space: nowrap;
+    margin: auto;
+}
+
+.dateItem > span {
+    margin: 2px;
 }
 
 .buttonsHolder {
@@ -65,8 +78,8 @@
     justify-content: space-between;
     align-items: center;
     position: absolute;
-    left: -340px;
-    top: 0;
+    left: -120px;
+    top: 40px;
     background-color: var(--white);
     border: 1px solid #d9d9d9;
     z-index: 13;

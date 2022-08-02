@@ -6,6 +6,7 @@ import DefaultButton from "../buttons/default-button/default-button";
 const Dropdown = ({custom, listItems, onAction}) => {
 
     const {visible, buttonClass, showDropdown, handleLeave, handleOver} = useDropdown();
+    const accountName = listItems[0].content.split("@")[1]
 
     return (
         <div className={classes.dropdown}>
@@ -15,7 +16,7 @@ const Dropdown = ({custom, listItems, onAction}) => {
                     onMouseLeave={visible ? handleLeave : null}
                     onMouseOver={visible ? handleOver : null}
                 >
-                    <span className={classes.account}>H</span>
+                    <span className={classes.account}> {accountName[0]}</span>
                     <span
                         className="material-icons"
                     >
@@ -23,8 +24,9 @@ const Dropdown = ({custom, listItems, onAction}) => {
                 </span>
                 </div>
                 : <DefaultButton
-                    width={26}
-                    height={26}
+                    width={30}
+                    height={30}
+                    className={classes.customHandler}
                     label={<span className="material-icons">{custom}</span>}
                     color={"grey-outlined"}
                     onClick={showDropdown}
@@ -40,11 +42,11 @@ const Dropdown = ({custom, listItems, onAction}) => {
                             listItems.map((item, index) => (
                                 <li className={classes.liIcons}
                                     key={`dropdown-li-${item.content}-${index}`}
-                                    onClick={onAction ? onAction : null}
+                                    onClick={onAction ? () => onAction(item.content) : null}
                                 >
                                     {item.content}
                                     {item.label && <span
-                                        onClick={(event) => console.log(event.target.outerText)}
+                                        onClick={onAction ? () => onAction(item.content) : null}
                                         className="material-icons">
                                         {item.label}
                                     </span>}

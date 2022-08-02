@@ -1,0 +1,34 @@
+.warningContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--red);
+}
+
+.warning {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    animation: blink 3s linear infinite;
+}
+
+@keyframes blink {
+
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: .5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.warning > span:first-child {
+    font-size: 50px;
+}

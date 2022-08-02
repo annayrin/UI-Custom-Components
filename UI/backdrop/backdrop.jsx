@@ -11,7 +11,6 @@ const Backdrop = ({open, blur, handleOpen, zIndex}) => {
     ]
 
 
-
     return (
         <div
             style={{

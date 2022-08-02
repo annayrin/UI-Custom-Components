@@ -6,7 +6,7 @@ const useDropdown = () => {
 
     const buttonClass = [
         classes.dropdownIcons,
-        visible? classes.hovered : ""
+        visible ? classes.hovered : ""
     ]
 
 

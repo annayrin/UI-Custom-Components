@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
-import classes from "./datePicker.module.css";
+import classes from "./date-picker.module.css";
 import DefaultButton from "../buttons/default-button/default-button";
-import DateData from "./dateData";
+import DateData from "./date-data";
 import useDateMakers from "./use-dateMakers";
 import Backdrop from "../backdrop/backdrop";
 
@@ -63,7 +63,7 @@ const DatePicker = ({setDates}) => {  // f from upper component.. in this case w
 
     const changeCalendar = () => {
         setOpenCalendar(!openCalendar)
-    //    setAnimation(true)
+        //    setAnimation(true)
     }
 
 
@@ -86,7 +86,7 @@ const DatePicker = ({setDates}) => {  // f from upper component.. in this case w
     }
 
     const chooseDate = (label, month, year) => {
-      //  setAnimation(false)
+        //  setAnimation(false)
 
         const range = [...chosenDates]
 
@@ -113,7 +113,7 @@ const DatePicker = ({setDates}) => {  // f from upper component.. in this case w
     }
 
     const changeMonth = change => {
-       // setAnimation(false)
+        // setAnimation(false)
         if (change) {
             if (month !== 11) {
                 setMonth(month + 1)
@@ -174,18 +174,33 @@ const DatePicker = ({setDates}) => {  // f from upper component.. in this case w
     }, [year, month, thisLastDay])
 
 
+    useEffect(() => {
+        if (chosenDates[0] && chosenDates[1]) actionSubmit()
+    }, [chosenDates])
+
+
     return (
         <div className={classes.calendarContainer}>
             <div className={classes.dateInput}>
                 {chosenDates[0] ?
-                    chosenDates.map((item,i) =>
-                            item && <div className={classes.dateItem}
-                            key={`date-${i}`}>
-                                {`${months[new Date(item).getMonth()]}
-                                ${new Date(item).getDate()}`}
-                            </div>
-                    )
-                    : <div> Choose the dates </div>}
+                    chosenDates.map((item, i) => {
+                        let thisMonth = months[new Date(item).getMonth()];
+                        let thisDate = new Date(item).getDate();
+                        return item && <div
+                            className={classes.dateItem}
+                            key={`date-${i}`}
+                            onClick={changeCalendar}
+                        >
+                            <span>{thisMonth.length === 4 ? thisMonth : thisMonth.slice(0, 3)}</span>
+                            <span>{thisDate}</span>
+                        </div>
+                    })
+                    : <div
+                        className={classes.emptyDate}
+                        onClick={changeCalendar}
+                    >
+                        Choose the dates
+                    </div>}
                 <div className={classes.buttonsHolder}>
                     <DefaultButton
                         width={22}
